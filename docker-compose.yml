@@ -32,25 +32,25 @@ services:
       - DASHBOARD_URL=http://localhost:9000/
       - ALLOWED_HOSTS=localhost,api
 
-  react-storefront:
-    build:
-      context: ./react-storefront
-      dockerfile: ./Dockerfile.dev
-    ports:
-      - 3001:3001
-    restart: unless-stopped
-    networks:
-      - saleor-backend-tier
-    depends_on:
-      - api
-    volumes:
-      - ./react-storefront/:/app:cached
-      - /app/node_modules/
-    # Nginx is used to proxy SSR requests thru docker networking
-    command: sh -c '(nginx &) && pnpm dev'
-    environment:
-      - NEXT_PUBLIC_API_URI=http://localhost:8000/graphql/
-      - NEXT_PUBLIC_HOMEPAGE_MENU=navbar
+  # react-storefront:
+  #   build:
+  #     context: ./react-storefront
+  #     dockerfile: ./Dockerfile.dev
+  #   ports:
+  #     - 3001:3001
+  #   restart: unless-stopped
+  #   networks:
+  #     - saleor-backend-tier
+  #   depends_on:
+  #     - api
+  #   volumes:
+  #     - ./react-storefront/:/app:cached
+  #     - /app/node_modules/
+  #   # Nginx is used to proxy SSR requests thru docker networking
+  #   command: sh -c '(nginx &) && pnpm dev'
+  #   environment:
+  #     - NEXT_PUBLIC_API_URI=http://localhost:8000/graphql/
+  #     - NEXT_PUBLIC_HOMEPAGE_MENU=navbar
 
   dashboard:
     build:
