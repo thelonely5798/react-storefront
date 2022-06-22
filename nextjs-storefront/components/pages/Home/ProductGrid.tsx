@@ -11,7 +11,7 @@ export const Productgrid = () => {
                 <p className=" w-10/12 mx-auto md:w-full  font-semi lg:text-4xl text-3xl lg:leading-9 md:leading-7 leading-9 text-center text-gray-800">Sản phẩm mới</p>
             </div>
             <div className=" py-6 lg:px-20 md:px-6 px-4">
-                <div className=" grid lg:grid-cols-4 grid-cols-2 gap-4">
+            <div className="grid overflow-hidden grid-cols-2 sm:grid-cols-3 md:grid-cols-4 grid-rows-2 gap-2">
                     <div>
                         <div className="relative group">
                             <div className=" flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full"></div>
